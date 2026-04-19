@@ -19,7 +19,7 @@
 
 ## 🔒 Security Vulnerabilities Found & Fixed
 
-### **1. Exposed API Keys** 🔴 CRITICAL
+### **1. Exposed API Keys** 
 
 **Location**: `src/config/constant.js`
 
@@ -38,7 +38,7 @@ const EthMainnet =
 INFURA_API_KEY=your_key_here
 ```
 
-### **2. No Input Validation** 🔴 HIGH
+### **2. No Input Validation** 
 
 **Location**: `src/routes/items.js`
 
@@ -64,7 +64,7 @@ const validateItem = (req, res, next) => {
 router.post('/', validateItem, (req, res) => { ... });
 ```
 
-### **3. No Authentication/Authorization** 🔴 HIGH
+### **3. No Authentication/Authorization**
 
 **Issue**: All endpoints completely public with no access controls
 
@@ -78,7 +78,7 @@ const authenticateToken = (req, res, next) => {
 };
 ```
 
-### **4. No Rate Limiting** 🔴 MEDIUM
+### **4. No Rate Limiting** 
 
 **Fix**: Add express-rate-limit
 
@@ -91,7 +91,7 @@ const limiter = rateLimit({
 app.use(limiter);
 ```
 
-### **5. File Path Issues** 🔴 MEDIUM
+### **5. File Path Issues** 
 
 **Location**: `src/routes/items.js`
 
@@ -115,7 +115,7 @@ const DATA_PATH = path.join(__dirname, "../../data/items.json");
 
 ### **Smart Contract API Endpoints**
 
-#### **1. Token Data Endpoint** 📊
+#### **1. Token Data Endpoint** 
 
 ```
 GET /api/contract/tokenData
